@@ -19,7 +19,7 @@ class Students:
     def __str__(self):
         res = f'Имя: {self.name}\n' \
               f'Фамилия: {self.surname}\n' \
-              f'Средняя оценка за домашние задания: {sum(*self.grades.values()) / len(*self.grades.values())}\n' \
+              f'Средняя оценка за домашние задания: {round(sum(*self.grades.values()) / len(*self.grades.values()), 1)}\n' \
               f'Курсы в процессе изучения: {", ".join(self.courses_in_progress)}\n' \
               f'Завершенные курсы: {", ".join(self.finished_courses)}'
         return res
@@ -50,7 +50,7 @@ class Lecturer(Mentors):
     def __str__(self):
         res = f'Имя: {self.name}\n' \
               f'Фамилия: {self.surname}\n' \
-              f'Средняя оценка за лекции:{sum(*self.grades.values()) / len(*self.grades.values())}'
+              f'Средняя оценка за лекции:{round(sum(*self.grades.values()) / len(*self.grades.values()),1)}'
         return res
 
 
@@ -103,4 +103,4 @@ if __name__ == '__main__':
     # print(some_reviewer)
     print(best_student)
     print(other_student)
-    print(best_student < other_student)
+    print(best_student > other_student)
